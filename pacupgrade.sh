@@ -9,8 +9,9 @@ if ! ./pacsync.sh "$@" &> /dev/null; then
     exit 1
 fi
 
-# TODO check arch news
-# https://wiki.archlinux.org/title/System_maintenance#Read_before_upgrading_the_system
+xmllint --xpath '//rss/channel/item[position() <= 5]/title[text()]' <(curl https://archlinux.org/feeds/news/)
+echo https://archlinux.org/news/
+read -p "I have read all relevant arch news notices (press enter to continue or ctrl-c to abort)"
 
 sudo pacman -Sy
 
