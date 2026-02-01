@@ -17,4 +17,4 @@ comm -1 \
     <(pacman -Q --explicit --native --quiet | sort) \
     <(cat $pkglist | sort) \
     | sed 's/^\s*//' \
-    > $pkglist.txt
+    > $pkglist
