@@ -14,8 +14,7 @@ fi
 
 sudo pacman -Sy
 
-# file 1 is a list of replacements (%R)
-# file 2 is the pkglist
+# gawk to apply replacements (%R)
 tmp=$(mktemp)
 gawk '
 FILENAME == ARGV[1] {
